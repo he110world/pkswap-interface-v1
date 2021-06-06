@@ -1,6 +1,5 @@
 import React from 'react'
-import { Text, Flex, Box, ErrorIcon, Button } from '@pancakeswap-libs/uikit'
-import { Link } from 'react-router-dom'
+import { Text, Flex, Box, ErrorIcon, Button, Link } from '@pancakeswap-libs/uikit'
 import Banner from './Banner'
 
 const MigrationV2 = () => {
@@ -10,22 +9,21 @@ const MigrationV2 = () => {
         <Flex alignItems="center">
           <ErrorIcon color="white" width="32px" mr="16px" />
           <Text color="white" fontSize="24px" bold>
-            ACTION REQUIRED for all LP token holders
+            TESTNET ONLY SWAP!
           </Text>
         </Flex>
       }
     >
       <Box ml="48px">
         <Text color="warning" bold>
-          You must complete migration if you want to keep earning from any LP tokens that are staked in PancakeSwap
-          farms.
+            This is a testnet pancakeswap instance working with router addr
+            &#39;0xD99D1c33F9fC3444f8101754aBC46c52416550D1&#39;.
         </Text>
         <Text color="white" mb="16px">
-          All LPs will be migrated to a new, upgraded contract, over several hours starting at{' '}
-          <strong>05:00 on April 23 (UTC).</strong>
+          For more information about this instance see the link below:
         </Text>
-        <Button as={Link} to="/migrate">
-          Migrate Now
+        <Button as={Link} external href="https://github.com/ibhagwan/pancake-swap-interface-v1">
+          Project&#39;s Github Page
         </Button>
       </Box>
     </Banner>

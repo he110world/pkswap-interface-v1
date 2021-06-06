@@ -19,113 +19,37 @@ const config: MenuEntry[] = [
         label: 'Liquidity',
         href: '/pool',
       },
-      {
-        label: 'Migration',
-        href: '/migrate',
-      },
     ],
   },
   {
-    label: 'Farms',
-    icon: 'FarmIcon',
-    href: 'https://pancakeswap.finance/farms',
-  },
-  {
-    label: 'Pools',
-    icon: 'PoolIcon',
-    href: 'https://pancakeswap.finance/pools',
-  },
-  {
-    label: 'Lottery',
-    icon: 'TicketIcon',
-    href: 'https://pancakeswap.finance/lottery',
-    status: {
-      text: 'WIN',
-      color: 'warning',
-    },
-  },
-  {
-    label: 'Collectibles',
-    icon: 'NftIcon',
-    href: 'https://pancakeswap.finance/nft',
-  },
-  {
-    label: 'Team Battle',
-    icon: 'TeamBattleIcon',
-    href: 'https://pancakeswap.finance/competition',
-  },
-  {
-    label: 'Teams & Profile',
+    label: 'Project Github',
     icon: 'GroupsIcon',
-    items: [
-      {
-        label: 'Leaderboard',
-        href: 'https://pancakeswap.finance/teams',
-      },
-      {
-        label: 'Task Center',
-        href: 'https://pancakeswap.finance/profile/tasks',
-      },
-      {
-        label: 'Your Profile',
-        href: 'https://pancakeswap.finance/profile',
-      },
-    ],
-  },
-  {
-    label: 'Info',
-    icon: 'InfoIcon',
-    items: [
-      {
-        label: 'Overview',
-        href: 'https://pancakeswap.info',
-      },
-      {
-        label: 'Tokens',
-        href: 'https://pancakeswap.info/tokens',
-      },
-      {
-        label: 'Pairs',
-        href: 'https://pancakeswap.info/pairs',
-      },
-      {
-        label: 'Accounts',
-        href: 'https://pancakeswap.info/accounts',
-      },
-    ],
-  },
-  {
-    label: 'IFO',
-    icon: 'IfoIcon',
-    href: 'https://pancakeswap.finance/ifo',
+    href: 'https://github.com/ibhagwan/pancake-swap-interface-v1',
   },
   {
     label: 'More',
     icon: 'MoreIcon',
+    initialOpenState: false,
     items: [
       {
-        label: 'Contact',
-        href: 'https://docs.pancakeswap.finance/contact-us',
+        label: 'Router Contract',
+        href: 'https://testnet.bscscan.com/address/0xD99D1c33F9fC3444f8101754aBC46c52416550D1#code',
       },
       {
-        label: 'Voting',
-        href: 'https://voting.pancakeswap.finance',
+        label: 'Factory Contract',
+        href: 'https://testnet.bscscan.com/address/0x6725f303b657a9451d8ba641348b6761a6cc7a17#code',
       },
       {
-        label: 'Github',
-        href: 'https://github.com/pancakeswap',
+        label: 'WETH (WBNB)',
+        href: 'https://testnet.bscscan.com/address/0xae13d989dac2f0debff460ac112a837c89baa7cd#code',
       },
       {
-        label: 'Docs',
-        href: 'https://docs.pancakeswap.finance',
+        label: 'KiemTienOnline360 Testnet Swap',
+        href: 'https://bsc.kiemtienonline360.com/',
       },
       {
-        label: 'Blog',
-        href: 'https://pancakeswap.medium.com',
-      },
-      {
-        label: 'Merch',
-        href: 'https://pancakeswap.creator-spring.com/',
+        label: 'KiemTienOnline360 PancakeSwap',
+        href: 'https://pancake.kiemtienonline360.com/',
       },
     ],
   },
