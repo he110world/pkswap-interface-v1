@@ -1,42 +1,26 @@
 import { ChainId, JSBI, Percent, Token, WETH } from '@pancakeswap-libs/sdk-v2'
 
-export const ROUTER_ADDRESS = '0xD99D1c33F9fC3444f8101754aBC46c52416550D1'
+export const ROUTER_ADDRESS:any = process.env.REACT_APP_ROUTER_ADDRESS
 
 // a list of tokens by chain
 type ChainTokenList = {
   readonly [chainId in ChainId]: Token[]
 }
 
-export const CAKE = new Token(
-  ChainId.MAINNET,
-  '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
-  18,
-  'CAKE',
-  'PancakeSwap Token'
-)
-export const WBNB = new Token(ChainId.MAINNET, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', 18, 'WBNB', 'Wrapped BNB')
-export const DAI = new Token(ChainId.MAINNET, '0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3', 18, 'DAI', 'Dai Stablecoin')
-export const BUSD = new Token(ChainId.MAINNET, '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56', 18, 'BUSD', 'Binance USD')
-export const BTCB = new Token(ChainId.MAINNET, '0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c', 18, 'BTCB', 'Binance BTC')
-export const USDT = new Token(ChainId.MAINNET, '0x55d398326f99059fF775485246999027B3197955', 18, 'USDT', 'Tether USD')
-export const UST = new Token(
-  ChainId.MAINNET,
-  '0x23396cF899Ca06c4472205fC903bDB4de249D6fC',
-  18,
-  'UST',
-  'Wrapped UST Token'
-)
-export const ETH = new Token(
-  ChainId.MAINNET,
-  '0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
-  18,
-  'ETH',
-  'Binance-Peg Ethereum Token'
-)
+const CHAIN_ID:any = process.env.REACT_APP_CHAIN_ID
+export const CAKE = new Token(CHAIN_ID,process.env.REACT_APP_TOKEN_CAKE,18,'CAKE','PancakeSwap Token')
+export const WBNB = new Token(CHAIN_ID,process.env.REACT_APP_TOKEN_WBNB,18, 'WBNB', 'Wrapped BNB')
+export const DAI = new Token(CHAIN_ID,process.env.REACT_APP_TOKEN_DAI, 18, 'DAI', 'Dai Stablecoin')
+export const BUSD = new Token(CHAIN_ID,process.env.REACT_APP_TOKEN_BUSD, 18, 'BUSD', 'Binance USD')
+export const BTCB = new Token(CHAIN_ID,process.env.REACT_APP_TOKEN_BTCB, 18, 'BTCB', 'Binance BTC')
+export const USDT = new Token(CHAIN_ID,process.env.REACT_APP_TOKEN_USDT, 18, 'USDT', 'Tether USD')
+export const UST = new Token(CHAIN_ID,process.env.REACT_APP_TOKEN_UST,18,'UST','Wrapped UST Token')
+export const ETH = new Token(CHAIN_ID,process.env.REACT_APP_TOKEN_ETH,18,'ETH','Binance-Peg Ethereum Token')
 
 const WETH_ONLY: ChainTokenList = {
   [ChainId.MAINNET]: [WETH[ChainId.MAINNET]],
   [ChainId.BSCTESTNET]: [WETH[ChainId.BSCTESTNET]],
+  [ChainId.LOCALNET]: [WETH[ChainId.LOCALNET]]
 }
 
 // used to construct intermediary pairs for trading

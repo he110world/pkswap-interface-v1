@@ -3208,8 +3208,10 @@
     truffle-flattener "^1.4.4"
     truffle-hdwallet-provider "^1.0.17"
 
-"@pancakeswap-libs/sdk-v2@file:../pancakeswap-sdk-v2":
+"@pancakeswap-libs/sdk-v2@^2.2.0":
   version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@pancakeswap-libs/sdk-v2/-/sdk-v2-2.2.0.tgz#fc1d048325c6bb114eeb0ce92e4f07a6c6d17657"
+  integrity sha512-FZ6Z6Ro9yMaUfb+fIzn2HB+qqQzipxpflmOZZ3JRUDW09mOqfimgloils78ZhNr3mh70MKNYFmy1AUXJIUNqkQ==
   dependencies:
     "@pancakeswap-libs/pancake-swap-core" "^0.1.0"
     big.js "^5.2.2"

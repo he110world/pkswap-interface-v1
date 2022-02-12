@@ -1,9 +1,10 @@
 import { ChainId } from '@pancakeswap-libs/sdk-v2'
 import MULTICALL_ABI from './abi.json'
 
-const MULTICALL_NETWORKS: { [chainId in ChainId]: string } = {
-  [ChainId.MAINNET]: '0x1Ee38d535d541c55C9dae27B12edf090C608E6Fb', // TODO
-  [ChainId.BSCTESTNET]: '0x301907b5835a2d723Fe3e9E8C5Bc5375d5c1236A'
+const MULTICALL_NETWORKS: { [chainId in ChainId]: any } = {
+  [ChainId.MAINNET]: process.env.REACT_APP_MULTICALL,
+  [ChainId.BSCTESTNET]: process.env.REACT_APP_MULTICALL,
+  [ChainId.LOCALNET]: process.env.REACT_APP_MULTICALL
 }
 
 export { MULTICALL_ABI, MULTICALL_NETWORKS }
