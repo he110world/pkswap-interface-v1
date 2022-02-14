@@ -2,6 +2,8 @@ import React from 'react'
 import { Text, Flex, Box, ErrorIcon, Button, Link } from '@pancakeswap-libs/uikit'
 import Banner from './Banner'
 
+const ROUTER_ADDRESS = process.env.REACT_APP_ROUTER_ADDRESS
+
 const MigrationV2 = () => {
   return (
     <Banner
@@ -17,7 +19,7 @@ const MigrationV2 = () => {
       <Box ml="48px">
         <Text color="warning" bold>
             This is a testnet pancakeswap instance working with router addr
-            &#39;0xD99D1c33F9fC3444f8101754aBC46c52416550D1&#39;.
+            {ROUTER_ADDRESS}.
         </Text>
         <Text color="white" mb="16px">
           For more information about this instance see the link below:

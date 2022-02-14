@@ -12,9 +12,7 @@ export const CAKE = new Token(CHAIN_ID,process.env.REACT_APP_TOKEN_CAKE,18,'CAKE
 export const WBNB = new Token(CHAIN_ID,process.env.REACT_APP_TOKEN_WBNB,18, 'WBNB', 'Wrapped BNB')
 export const DAI = new Token(CHAIN_ID,process.env.REACT_APP_TOKEN_DAI, 18, 'DAI', 'Dai Stablecoin')
 export const BUSD = new Token(CHAIN_ID,process.env.REACT_APP_TOKEN_BUSD, 18, 'BUSD', 'Binance USD')
-export const BTCB = new Token(CHAIN_ID,process.env.REACT_APP_TOKEN_BTCB, 18, 'BTCB', 'Binance BTC')
 export const USDT = new Token(CHAIN_ID,process.env.REACT_APP_TOKEN_USDT, 18, 'USDT', 'Tether USD')
-export const UST = new Token(CHAIN_ID,process.env.REACT_APP_TOKEN_UST,18,'UST','Wrapped UST Token')
 export const ETH = new Token(CHAIN_ID,process.env.REACT_APP_TOKEN_ETH,18,'ETH','Binance-Peg Ethereum Token')
 
 const WETH_ONLY: ChainTokenList = {
@@ -26,7 +24,7 @@ const WETH_ONLY: ChainTokenList = {
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   ...WETH_ONLY,
-  [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, BUSD, BTCB, USDT, UST, ETH],
+  [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, BUSD, USDT, ETH],
 }
 
 /**
@@ -46,7 +44,7 @@ export const SUGGESTED_BASES: ChainTokenList = {
 // used to construct the list of all pairs we consider by default in the frontend
 export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   ...WETH_ONLY,
-  [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, BUSD, BTCB, USDT],
+  [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, BUSD, USDT],
 }
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {

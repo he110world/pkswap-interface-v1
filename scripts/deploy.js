@@ -1,9 +1,11 @@
 const fs = require('fs')
 
 async function deploy(contr, ...args){
+    console.log(contr,args)
     const c1 = await ethers.getContractFactory(contr)
     const c2 = await c1.deploy(...args)
     await c2.deployed()
+    console.log(c2.address)
     return c2.address
 }
 
@@ -44,11 +46,16 @@ async function main() {
         `REACT_APP_CHAIN_ID="31337"`
     ]
 
+    let wbnb
+
     //tokens
     for(const t in tokens){
         const a = await deploy(tokens[t])
         env_lines.push(`REACT_APP_TOKEN_${t}="${a}"`)
         console.log(t,tokens[t])
+        if (t==='WBNB'){
+            wbnb = a
+        }
     }
 
     //multicall
@@ -71,10 +78,28 @@ async function main() {
     env_lines.push(`REACT_APP_INIT_CODE_HASH="${ich}"`)
     console.log('hash',ich)
 
+    const lib_path = 'contracts/contracts3/libraries/PancakeLibrary.sol'
+    const lib = fs.readFileSync(lib_path,'utf8')
+    const lib2 = lib.replace(/[a-f0-9]{64}/,ich.substr(2))
+    fs.writeFileSync(lib_path,lib2)
+
     //pancakepair
     const pp = await deploy('PancakePair')
+    console.log('pp',pp)
     //const pp2 = await deploy('PancakeProfile')
 
+    //router
+    const pr = await ethers.getContractFactory('PancakeRouter')
+    const pr2 = await pr.deploy(Factory.address,wbnb)
+    const rt = pr2.address
+
+    /*
+    const rt = await deploy('PancakeRouter',Factory.address,wbnb)
+    //const rt01 = await deploy('PancakeRouter01',Factory.address,wbnb)
+    */
+    env_lines.push(`REACT_APP_ROUTER_ADDRESS="${rt}"`)
+    console.log('rt',rt)
+ 
     //lp
 
     const env = env_lines.join('\n')
