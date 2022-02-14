@@ -103,7 +103,7 @@ async function main() {
     //lp
 
     const env = env_lines.join('\n')
-    fs.writeFileSync('.env.local', env)
+    fs.writeFileSync('.env', env)
 }
   
 main().then(() => process.exit(0))
