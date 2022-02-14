@@ -128,7 +128,6 @@ export default function FullPositionCard({ pair, removeOnly }: PositionCardProps
 
   const userPoolBalance = useTokenBalance(account ?? undefined, pair.liquidityToken)
   const totalPoolTokens = useTotalSupply(pair.liquidityToken)
-
   const poolTokenPercentage =
     !!userPoolBalance && !!totalPoolTokens && JSBI.greaterThanOrEqual(totalPoolTokens.raw, userPoolBalance.raw)
       ? new Percent(userPoolBalance.raw, totalPoolTokens.raw)

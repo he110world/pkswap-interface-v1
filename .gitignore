@@ -12,6 +12,10 @@ sftp-config.json
 # production
 /build
 
+# solidity cache
+/artifacts
+/cache
+
 # misc
 .DS_Store
 .env.local
