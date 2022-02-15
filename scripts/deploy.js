@@ -13,7 +13,7 @@ async function deploy(contr, ...args){
 
 // This is a script for deploying your contracts. You can adapt it to deploy
 // yours, or create new ones.
-module.exports = async function main(host = 'http://localhost') {
+module.exports = async function main(host = 'http://localhost', chain_id = 31337) {
     // This is just a convenience check
     if (network.name === "hardhat") {
       console.warn(
@@ -45,7 +45,7 @@ module.exports = async function main(host = 'http://localhost') {
 
     const env_lines = [
         `REACT_APP_NETWORK_URL="${host}:8545"`,
-        `REACT_APP_CHAIN_ID="31337"`
+        `REACT_APP_CHAIN_ID="${chain_id}"`
     ]
 
     let wbnb

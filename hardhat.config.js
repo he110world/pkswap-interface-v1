@@ -2,8 +2,9 @@ require("@nomiclabs/hardhat-waffle");
 
 task('deploy','Deploy contracts')
 .addParam('host',`Node's host`)
+.addParam('chain',`Node's chain id`)
 .setAction(async (args,hre)=>{
-    const main = require('./scripts/deploy.js')
+    const main = require('./scripts/deploy.js', args.chain_id)
     await main(args.host)
 })
 
