@@ -6,7 +6,7 @@
   "dependencies": {
     "@binance-chain/bsc-connector": "^1.0.0",
     "@crowdin/crowdin-api-client": "^1.8.16",
-    "@ethersproject/experimental": "^5.0.1",
+    "@ethersproject/experimental": "^5.5.0",
     "@nomiclabs/hardhat-ethers": "^2.0.5",
     "@nomiclabs/hardhat-waffle": "^2.0.2",
     "@pancakeswap-libs/sdk": "1.0.1",
@@ -41,7 +41,7 @@
     "cids": "^1.0.0",
     "copy-to-clipboard": "^3.2.0",
     "ethereum-waffle": "^3.4.0",
-    "ethers": "^5.0.7",
+    "ethers": "^5.5.4",
     "hardhat": "^2.8.4",
     "i18next": "^15.0.9",
     "i18next-browser-languagedetector": "^3.0.1",
