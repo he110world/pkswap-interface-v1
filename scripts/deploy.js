@@ -1,4 +1,6 @@
 const fs = require('fs')
+const hre = require('hardhat')
+const ethers = hre.ethers
 
 async function deploy(contr, ...args){
     console.log(contr,args)
@@ -11,7 +13,7 @@ async function deploy(contr, ...args){
 
 // This is a script for deploying your contracts. You can adapt it to deploy
 // yours, or create new ones.
-async function main() {
+module.exports = async function main(host = 'http://localhost') {
     // This is just a convenience check
     if (network.name === "hardhat") {
       console.warn(
@@ -42,7 +44,7 @@ async function main() {
     }
 
     const env_lines = [
-        `REACT_APP_NETWORK_URL="http://eth1.haha.fit:8545"`,
+        `REACT_APP_NETWORK_URL="${host}:8545"`,
         `REACT_APP_CHAIN_ID="31337"`
     ]
 
@@ -106,9 +108,11 @@ async function main() {
     fs.writeFileSync('.env', env)
 }
   
+/*
 main().then(() => process.exit(0))
     .catch((error) => {
         console.error(error);
         process.exit(1);
     });
 
+*/

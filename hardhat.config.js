@@ -1,8 +1,11 @@
 require("@nomiclabs/hardhat-waffle");
 
-// The next line is part of the sample project, you don't need it in your
-// project. It imports a Hardhat task definition, that can be used for
-// testing the frontend.
+task('deploy','Deploy contracts')
+.addParam('host',`Node's host`)
+.setAction(async (args,hre)=>{
+    const main = require('./scripts/deploy.js')
+    await main(args.host)
+})
 
 module.exports = {
 	solidity: {
